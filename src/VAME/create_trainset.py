@@ -8,6 +8,7 @@ import datetime
 PROJECT_PATH = pathlib.Path("/flashscratch/chouda/vame_grooming/grooming_8k-Sep11-2024")
 CONFIG_PATH = PROJECT_PATH / "config.yaml"
 
+
 # Helper Functions
 
 def set_up_logging(config):
@@ -52,6 +53,10 @@ def main():
     # Set up logging
     logger = set_up_logging(cfg)
     # Create trainset
+
+    # Set egocentric_data to false (as our data is not-egocentric by design) 
+    cfg["egocentric_data"] = False
+    
     vame.create_trainset(CONFIG_PATH, logger, check_parameter=False)
     logging.info("Trainset created successfully!")
 
