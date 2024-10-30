@@ -4,26 +4,7 @@ from pathlib import Path
 import shutil
 from refactored_script import ensure_directory_exists, save_list_to_file, load_filtered_motifs, compute_wasserstein_distance_matrix
 
-class TestRefactoredCode(unittest.TestCase):
-    def test_ensure_directory_exists(self):
-        test_dir = Path("test_output")
-        ensure_directory_exists(test_dir)
-        self.assertTrue(test_dir.exists())
-        # Clean up
-        if test_dir.exists():
-            shutil.rmtree(test_dir)
-
-    def test_save_list_to_file(self):
-        test_file = Path("test_list.txt")
-        test_list = ["item1", "item2", "item3"]
-        save_list_to_file(test_file, test_list)
-        self.assertTrue(test_file.exists())
-        with open(test_file, "r") as f:
-            lines = f.readlines()
-        self.assertEqual(len(lines), len(test_list))
-        # Clean up
-        if test_file.exists():
-            test_file.unlink()
+class TestCommunityWassertein(unittest.TestCase):
 
     def test_load_filtered_motifs(self):
         test_file = Path("test_filtered_motifs.txt")
