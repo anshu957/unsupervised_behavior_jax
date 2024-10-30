@@ -10,8 +10,8 @@ LOG_DIR="$(dirname "$(dirname "${BASH_SOURCE[0]}")")/logs/sbatch_logs"
 mkdir -p "$LOG_DIR"
 
 # output and error paths to point to the log directory
-#SBATCH --output="$LOG_DIR/grooming8k_setup_%A_%a.out"
-#SBATCH --error="$LOG_DIR/grooming8k_setup_%A_%a.err"
+#SBATCH --output="$LOG_DIR/vame_infer8_groom_%A_%a.out"
+#SBATCH --error="$LOG_DIR/vame_infer8_groom_%A_%a.err"
 
 # Calculate the starting video index for the current job
 START=$((SLURM_ARRAY_TASK_ID * 10))
