@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 from pathlib import Path
 import shutil
-from refactored_script import ensure_directory_exists, save_list_to_file, load_filtered_motifs, compute_wasserstein_distance_matrix
+from community_wasserstein import ensure_directory_exists, save_list_to_file, load_filtered_motifs, compute_wasserstein_distance_matrix
 
 class TestCommunityWassertein(unittest.TestCase):
 
