@@ -15,3 +15,9 @@ Analysis:
   - Purity
   - Normalized Mutual Information
   - Homogeneity
+
+
+Installation notes:
+
+We recommend installing each method in their respective conda/python environments. 
+For installation instructions, check Methods Github repositories linked above. 
