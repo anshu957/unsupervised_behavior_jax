@@ -10,4 +10,5 @@ docs/
 */.DS_Store
 */.pytest
 *.ipynb
+results/
 

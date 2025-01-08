@@ -14,7 +14,7 @@ def load_keypoints_pd(dir_name):
     coordinates = {}
     confidences = {}
 
-    for filepath in tqdm.tqdm(keypoint_files[::2]):
+    for filepath in tqdm.tqdm(keypoint_files):
         try:
             # Read the CSV file in chunks
             chunk_iterator = pd.read_csv(
@@ -63,16 +63,16 @@ def load_keypoints_pd(dir_name):
     return coordinates, confidences
 
 
-def print_gpu_usage(logger):
+def print_gpu_usage():
     try:
         # Run nvidia-smi and capture the output
         result = subprocess.run(["nvidia-smi"], capture_output=True, text=True)
-        logger.info(result.stdout)
+        logging.info(result.stdout)
     except FileNotFoundError:
-        logger.info(
+        logging.info(
             "nvidia-smi not found. Ensure NVIDIA drivers are installed.")
     except Exception as e:
-        logger.info(f"An error occurred: {e}")
+        logging.info(f"An error occurred: {e}")
 
 
 def set_up_logging(log_dir):
